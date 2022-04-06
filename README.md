@@ -86,8 +86,7 @@ The function is written in C language and thus needs the  **`gcc`  compiler**  a
 **1. Cloning the repositories**
 
 ```shell
-git clone https://github.com/Neress-dono/Tronc-Commun_42.git 
-cd Tronc-Commun_42/so_long
+git clone https://github.com/Nera-tv/so_long.git so_long
 ```
 
 **2. Compiling the library**
