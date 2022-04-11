@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:19:03 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/04/11 12:18:32 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <time.h> 
 # include <sys/time.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 # define SIZE_SPRITE 64
 
@@ -37,7 +36,6 @@ void	key_a(t_data *data);
 void	key_s(t_data *data);
 void	key_d(t_data *data);
 void	delay(t_data *data, int milli_sec);
-void	move_print_on_win(t_data *data);
 void	ft_load_images(t_data *data);
 void	ft_load_p_images(t_data *data);
 void	ft_load_col_images(t_data *data);
