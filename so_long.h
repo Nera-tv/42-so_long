@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:16:47 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 12:50:54 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "mlx/mlx.h"
 # include "libft/libft.h"
 
+# define ERRUSAGE "so_long: no map to parse !\
+	\nUsage : ./so_long maps/<map>.ber\n"
 # define ERRARGLESS "so_long: no map to parse !\n"
 # define ERRCHARLESS "so_long: map parsing error ! \
 	One of the characteres \"0, 1, P, C, E\" is missing !\n"
@@ -67,7 +69,7 @@ typedef struct s_data {
 }				t_data;
 
 char	*ft_parsing(char *src);
-char	*push_file_into_tab(char *src);
+int		push_file_into_tab(char *src, char **str);
 int		ft_check_map_char(char *str);
 int		ft_check_wall_up_down_left_right(char *str);
 int		get_map_w_nl(t_data *data);
@@ -92,6 +94,5 @@ void	player_mov(t_data *data);
 void	ft_destroy_images(t_data *data);
 void	map_ac(t_data *data, int lr, int ud);
 void	ft_check_images(t_data *data, void **img, int nbr_of_images, char *msg);
-
 
 #endif

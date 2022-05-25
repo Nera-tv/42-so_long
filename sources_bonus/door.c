@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:38:49 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/22 14:13:51 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 14:54:30 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	open_door(t_data *data)
 	x = 0;
 	y = 0;
 	i = 0;
+	if (data->col.opened)
+		return ;
 	while (i != ((data->map.n_of_l * data->map.l_len) + data->map.l_len))
 	{
 		while (x != data->map.l_len)
@@ -76,6 +78,7 @@ void	open_door(t_data *data)
 		x = 0;
 		y++;
 	}
+	data->col.opened = 1;
 	portal_eye(data);
 }
 

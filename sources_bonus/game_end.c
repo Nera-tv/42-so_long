@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:38:38 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:18:24 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 15:05:36 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ void	next_level(t_data *data)
 	close_game(data);
 	free(data->map.map_path);
 	if (data->nl.lvl < 9)
-		start_game(data, data->nl.levels[data->nl.lvl++]);
+	{
+		if (start_game(data, data->nl.levels[data->nl.lvl++]) == 1)
+			exit(0);
+	}
 }
 
 void	retry_game(t_data *data)
@@ -71,5 +74,6 @@ void	retry_game(t_data *data)
 	data->game_ev.game_over = 0;
 	data->game_ev.game_ev = 0;
 	close_game(data);
-	start_game(data, data->map.map_path);
+	if (start_game(data, data->map.map_path) == 1)
+		exit(0);
 }

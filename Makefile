@@ -1,14 +1,25 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/03 17:19:25 by dvilard           #+#    #+#              #
-#    Updated: 2022/04/06 13:33:06 by dvilard          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+.PHONY :	re fclean clean all
+#.SILENT:
+
+
+NAME				= 	so_long
+NAME_B				= 	so_long_bonus
+
+P_LFT		:=	libft/
+P_MLX		:=	mlx/
+P_INC		:=	include/
+P_SRCS		:=	sources/
+P_SRCS_B	:=	sources_bonus/
+P_OBJS		:=	.objects/
+P_OBJS_B	:=	.objects_bonus/
+P_TRA		:=	trace/
+
+HEADER				=	so_long.h
+HEADER_B			=	so_long_bonus.h			\
+						${P_INC}error_msg.h		\
+						${P_INC}key.h			\
+						${P_INC}struct.h		\
+						${P_LFT}libft.h
 
 # Sources
 LST_SRCS			=	destroy_game.c			\
@@ -27,8 +38,8 @@ LST_SRCS			=	destroy_game.c			\
 
 
 LST_OBJS			=	${LST_SRCS:.c=.o}
-SRCS				=	$(addprefix sources/,${LST_SRCS})
-OBJS				=	$(addprefix .objects/,${LST_OBJS})
+SRCS				=	$(addprefix ${P_SRCS}${LST_SRCS})
+OBJS				=	$(addprefix ${P_OBJS},${LST_OBJS})
 
 # Bonus Part Sources
 LST_SRCS_B			=	collectible.c								\
@@ -62,68 +73,160 @@ LST_SRCS_B			=	collectible.c								\
 
 
 LST_OBJS_B			=	${LST_SRCS_B:.c=.o}
-SRCS_B				=	$(addprefix sources_bonus/,${LST_SRCS_B})
-OBJS_B				=	$(addprefix .objects_bonus/,${LST_OBJS_B})
+SRCS_B				=	$(addprefix ${P_SRCS_B},${LST_SRCS_B})
+OBJS_B				=	$(addprefix ${P_OBJS_B},${LST_OBJS_B})
 
 CC					=	gcc
-CFLAGS				=	-Wall -Wextra -Werror
-NAME				= 	so_long
-NAME_B				= 	so_long_bonus
-HEADER				=	so_long.h
-HEADER_B			=	so_long_bonus.h
+CFLAGS				=	-Wall -Wextra -Werror -fsanitize=address -g3
 RM					=	rm -rf
-LFT					=	libft/libft.a
-LMLX				=	mlx/libmlx.a
+LFTA				=	${P_LFT}libft.a
+LMLX				=	${P_MLX}libmlx.a
 
-all : norm bonus
+#///////////////////////////////////////////////////////////////////////////////
+
+# Colors
+BLACK		=	\033[30m
+RED			=	\033[31m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+BLUE		=	\033[34m
+PURPLE		=	\033[35m
+CYAN		=	\033[36m
+WHITE		=	\033[37m
+
+# Text
+ERASE		=	\033[2K\r
+RESET		=	\033[0m
+BOLD		=	\033[1m
+FAINT		=	\033[2m
+ITALIC		=	\033[3m
+UNDERLINE	=	\033[4m
+
+BBLU 		=	\033[1;34m
+BGREEN		=	\033[1;32m
+BRED		=	\033[1;31m
+BLU 		=	\033[0;34m
+MGT			=	\033[0;35m
+LMGT		=	\033[0;95m
+LBLU 		=	\033[0;96m
+GRN 		=	\033[0;32m
+RED 		=	\033[0;31m
+GRY 		=	\033[0;90m
+RST 		=	\033[0m
+
+#///////////////////////////////////////////////////////////////////////////////
+
+all : print_header makelft makelmx norm bonus print_bottom
+
+
+
+
+
+
+
+
+
+
+
+print_header:
+	@echo "${GRY}====================================================${RST}\n"
+	@echo " ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄    ▄▄▄     ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄▄ "
+	@echo "█       █       █  █   █   █       █  █  █ █       █"
+	@echo "█  ▄▄▄▄▄█   ▄   █  █   █   █   ▄   █   █▄█ █   ▄▄▄▄█"
+	@echo "█ █▄▄▄▄▄█  █ █  █  █   █   █  █ █  █       █  █  ▄▄ "
+	@echo "█▄▄▄▄▄  █  █▄█  █  █   █▄▄▄█  █▄█  █  ▄    █  █ █  █"
+	@echo " ▄▄▄▄▄█ █       █  █       █       █ █ █   █  █▄▄█ █"
+	@echo "█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█"
+	@echo "\n${GRY}====================================================${RST}\n"
 
 # Rules
-.objects/%.o: sources/%.c $(HEADER)
-	mkdir -p .objects
-	${CC} ${CFLAGS} -Imlx -c $< -o $@
 
-${NAME} :	$(OBJS)
-	${CC} ${CFLAGS} ${OBJS} ${LFT} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
-	cp mlx/libmlx.dylib .
+norm : ${NAME}
 
-norm : $(LFT) $(LMLX) ${NAME}
+${NAME} : ${P_OBJS} ${OBJS} ${HEADER} ${LFTA}
+	@${CC} ${CFLAGS} ${OBJS} ${LFTA} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+	@cp mlx/libmlx.dylib .
+	@printf "\n$(GREEN)$(BOLD)Copy libmlx.dylib done$(RESET)	✅"
+	@printf "\n$(GREEN)$(BOLD)Binary $(NAME) created$(RESET)	✅\n\n"
+
+${P_OBJS}%.o:${P_SRCS}%.c ${HEADER} ${LFTA} Makefile | ${P_OBJS}
+	@${CC} ${CFLAGS} -Imlx -c $< -o $@
+	@printf "$(FAINT)$(CC) $(CFLAGS) -c -o $(RESET)$(CYAN)$(BOLD)$@$(RESET) $(FAINT)$(BLUE)$<$(RESET)\n"
 
 # Rules For Bonus
 
-.objects_bonus/%.o: sources_bonus/%.c $(HEADER_B)
-	mkdir -p .objects_bonus
-	${CC} ${CFLAGS} -Imlx -c $< -o $@
+bonus :	${NAME_B}
 
-${NAME_B} :	$(OBJS_B)
-	${CC} ${CFLAGS} ${OBJS_B} ${LFT} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME_B}
-	cp mlx/libmlx.dylib .
+${NAME_B} :	${P_OBJS_B} ${OBJS_B} ${HEADER_B} ${LFTA}
+	@${CC} ${CFLAGS} ${OBJS_B} ${LFTA} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME_B}
+	@cp mlx/libmlx.dylib .
+	@${RM} ${P_TRA}
+	@mkdir ${P_TRA}
+	@touch ${P_TRA}trace.txt
+	@printf "\n$(GREEN)$(BOLD)Copy libmlx.dylib done$(RESET)	✅"
+	@printf "\n$(GREEN)$(BOLD)Trace folder created$(RESET)	✅"
+	@printf "\n$(GREEN)$(BOLD)Binary $(NAME_B) created$(RESET)	✅\n"
 
-bonus :	$(LFT) $(LMLX) ${NAME_B}
 
+${P_OBJS_B}%.o: ${P_SRCS_B}%.c ${HEADER_B} ${LFTA} Makefile | ${P_OBJS_B}
+	@${CC} ${CFLAGS} -Imlx -c $< -o $@
+	@printf "$(FAINT)$(CC) $(CFLAGS) -c -o $(RESET)$(CYAN)$(BOLD)$@$(RESET) $(FAINT)$(BLUE)$<$(RESET)\n"
 
+# Rules For Objects Folder
+
+$(P_OBJS):
+	@mkdir -p $(P_OBJS)
+	@printf "$(GREEN)$(BOLD)${NAME} objects directories created$(RESET)	✅\n\n"
+
+$(P_OBJS_B): 
+	@mkdir -p $(P_OBJS_B)
+	@printf "$(GREEN)$(BOLD)${NAME_B} objects directories created$(RESET)	✅\n\n"
+
+print_bottom:
+	@echo "\n${GRY}=================================================${RST}\n"
+	@echo " ▄   ▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄    ▄ "
+	@echo "█ █ █   █       █   █   █  █ █  █       █  █  █ █"
+	@echo "█ █▄█   █▄▄▄▄   █   █   █  █▄█  █   ▄   █   █▄█ █"
+	@echo "█       █▄▄▄▄█  █   █   █       █  █ █  █       █"
+	@echo "█▄▄▄    █ ▄▄▄▄▄▄█   █▄▄▄█▄     ▄█  █▄█  █  ▄    █"
+	@echo "    █   █ █▄▄▄▄▄█       █ █   █ █       █ █ █   █"
+	@echo "    █▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄█  █▄▄█"
+	@echo "\n${GRY}==================>${RST} By ${LMGT}dvilard${RST} ${GRY}<=================${RST}\n"
+
+$(LFTA): makelft
+
+makelft:
+	@${MAKE} -C libft
+
+$(LMLX): makelmx
+
+makelmx:
+	@make -C ./mlx
+	@cp mlx/libmlx.dylib .
 
 # Clean Rules
-
 clean :
-	${RM} .objects
-	${RM} .objects_bonus
+	@${RM} ${OBJS}
+	@${RM} ${P_OBJS}
+	@printf "$(YELLOW)$(BOLD)All ${NAME} object files removed$(RESET)\n"
+	@printf "$(YELLOW)$(BOLD)${NAME} object folders removed$(RESET)\n"
+	@${RM} ${OBJS_B}
+	@${RM} ${P_OBJS_B}
+	@printf "$(YELLOW)$(BOLD)All ${NAME_B} object files removed$(RESET)\n"
+	@printf "$(YELLOW)$(BOLD)${NAME_B} object folders removed$(RESET)\n"
 
-fclean :	clean
-	${RM} ${NAME}
-	${RM} ${NAME_B}
-	${RM} libmlx.dylib
+fclean :	
+	@${MAKE}	clean
+	@${RM} ${NAME} 
+	@${RM} ${NAME_B}
+	@$(MAKE) fclean -C ${P_LFT}
+	@$(MAKE) clean -C ${P_MLX}
+	@${RM} libmlx.dylib	
+	@printf "$(RED)$(BOLD)Binary $(NAME) removed $(RESET)\n"
+	@printf "$(RED)$(BOLD)Binary $(NAME_B) removed $(RESET)\n"
 
 # Re Rule
 
-re :		fclean all
-
-
-
-$(LFT):
-	make -C ./libft
-
-$(LMLX):
-	make -C ./mlx
-	cp mlx/libmlx.dylib .
-
-.PHONY :	re fclean clean all
+re :		
+	@${MAKE} fclean
+	@${MAKE} all

@@ -6,34 +6,38 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:52:05 by dvilard           #+#    #+#             */
-/*   Updated: 2022/02/08 13:53:39 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 12:42:17 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include <stdio.h>
 
-char	*push_file_into_tab(char *src)
+int	push_file_into_tab(char *src, char **str)
 {
 	int			fd;
 	char		*gnl;
-	char		*str;
 	size_t		length;
 
 	fd = open(src, O_RDONLY);
-	str = NULL;
 	gnl = get_next_line(fd);
 	length = ft_linelen(gnl);
 	while (gnl)
 	{
-		str = ft_strjoin_gnl(str, gnl);
+		*str = ft_strjoin_gnl(*str, gnl);
 		free(gnl);
 		gnl = get_next_line(fd);
 		if (ft_linelen(gnl) != length && ft_linelen(gnl) != 0)
-			return (NULL);
+		{
+			free(*str);
+			close(fd);
+			free(gnl);
+			return (1);
+		}
 	}
 	free(gnl);
 	close(fd);
-	return (str);
+	return (0);
 }
 
 int	ft_check_map_char(char *str)
@@ -99,13 +103,18 @@ char	*ft_parsing(char *src)
 	int		val;
 
 	val = 0;
-	str = push_file_into_tab(src);
-	if (str == NULL)
+	str = NULL;
+	val += push_file_into_tab(src, &str);
+	if (val != 0)
+	{
+		ft_putstr_fd(ERRCHARLESS, 1);
 		return (NULL);
+	}
 	val += ft_check_map_char(str);
 	val += ft_check_wall_up_down_left_right(str);
 	if (val != 0)
 	{
+		free(str);
 		ft_putstr_fd(ERRCHARLESS, 1);
 		return (NULL);
 	}

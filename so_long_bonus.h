@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/11 12:18:32 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 12:52:53 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	print_count_on_map(t_data *data);
 void	end(t_data *data);
 void	get_collectible(t_data *data);
 char	*ft_parsing(char *src);
-char	*push_file_into_tab(char *src);
+int		push_file_into_tab(char *src, char **str);
 int		ft_check_map_char(char *str);
 int		ft_check_wall_up_down_left_right(char *str);
 int		ft_new_win(t_data *data);

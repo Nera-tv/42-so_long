@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:41 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 12:19:58 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 12:53:25 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 	data.error = 0;
 	if (argc != 2)
 	{
-		ft_putstr_fd(ERRARGLESS, 1);
+		ft_putstr_fd(ERRUSAGE, 1);
 		return (0);
 	}
 	data.mlx.mlx = mlx_init();

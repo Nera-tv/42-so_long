@@ -6,13 +6,15 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:10:10 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:12:59 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 12:51:23 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_MSG_H
 # define ERROR_MSG_H
 
+# define ERRUSAGE "so_long: no map to parse !\
+	\nUsage : ./so_long maps/<map>.ber\n"
 # define ERRARGLESS "so_long: no map to parse !\n"
 # define ERRMAPPARS "so_long: map parsing error !\n"
 # define ERRCHARLESS "so_long: One of the \

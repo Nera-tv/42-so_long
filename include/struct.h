@@ -6,7 +6,7 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:08:11 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 13:00:53 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 14:49:28 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_next_l {
 	char		*levels[9];
 	int			lvl;
 }				t_next_l;
-
 
 typedef struct s_map {
 	void		*img_map[4];
@@ -46,6 +45,7 @@ typedef struct s_collectible
 	void		*img_col[10];
 	int			col;
 	int			col_on_map;
+	int			opened;
 }				t_collectible;
 
 typedef struct s_clock {
