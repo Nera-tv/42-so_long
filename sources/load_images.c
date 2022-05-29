@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:39:04 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/21 17:53:08 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:24 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	ft_load_images(t_data *data)
 {

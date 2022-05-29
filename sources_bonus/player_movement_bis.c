@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:34:29 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 11:22:36 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:15 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	print_count_on_map_bis(t_data *data, void **tab)
 {

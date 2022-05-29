@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:13:19 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/23 15:17:14 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:24:57 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	delete_block(t_data *data, int lr, int ud)
 {

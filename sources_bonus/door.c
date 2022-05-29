@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:38:49 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 14:54:30 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:21 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	put_door_on_map_bis(t_data *data, size_t x, size_t y)
 {

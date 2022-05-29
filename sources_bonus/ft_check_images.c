@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:38:45 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/22 11:48:32 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:24 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	ft_check_images(t_data *data, void **img, int nbr_of_images, char *msg)
 {

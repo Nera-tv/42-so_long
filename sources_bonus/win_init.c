@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 16:41:56 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 12:20:26 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:24:38 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	p_anim_bis(t_data *data, int img)
 {

@@ -6,17 +6,17 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 12:52:53 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:26 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# include "mlx/mlx.h"
-# include "include/struct.h"
-# include "include/error_msg.h"
-# include "include/key.h"
+# include "../mlx/mlx.h"
+# include "struct.h"
+# include "error_msg.h"
+# include "key.h"
 # include <time.h> 
 # include <sys/time.h>
 # include <stdlib.h>

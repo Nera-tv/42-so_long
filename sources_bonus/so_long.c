@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:41 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 12:53:25 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 18:44:43 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	init_levels(t_data *data)
 {
@@ -25,13 +25,26 @@ void	init_levels(t_data *data)
 	data->nl.levels[8] = "maps/map09.ber";
 }
 
+int	check_path_map(char *str)
+{
+	int	fd;
+
+	if (str[ft_strlen(str) - 4] != '.' || str[ft_strlen(str) - 3] != 'b'
+		|| str[ft_strlen(str) - 2] != 'e' || str[ft_strlen(str) - 1] != 'r')
+		return (1);
+	fd = open(str, O_RDONLY);
+	if (fd < 0)
+		return (1);
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_data	data;
 
 	ft_memset(&data, 0, sizeof(t_data));
 	data.error = 0;
-	if (argc != 2)
+	if (argc != 2 || check_path_map(argv[1]) == 1)
 	{
 		ft_putstr_fd(ERRUSAGE, 1);
 		return (0);

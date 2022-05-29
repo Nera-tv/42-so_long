@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:30:36 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/21 16:47:18 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:09 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	player_movement_up(t_data *data)
 {	

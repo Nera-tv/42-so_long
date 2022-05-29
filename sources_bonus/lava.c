@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:49:34 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/22 11:38:02 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:44 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	put_lava_on_map(t_data *data)
 {

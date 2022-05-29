@@ -87,7 +87,7 @@ all: ${NAME}
 ${NAME} : $(OBJS) ${BOBJS}
 	@${AR} ${NAME} ${OBJS} ${BOBJS}
 	@${RL} ${NAME}
-	@printf "$(PURPLE)$(BOLD)Library $(NAME) created$(RST)\n"
+	@printf "$(PURPLE)$(BOLD)Library $(NAME) created$(RESET)\n"
 
 ${P_OBJS}%.o: ${P_SRCS}%.c $(HEADER)
 	@mkdir -p ${P_OBJS}
@@ -96,13 +96,13 @@ ${P_OBJS}%.o: ${P_SRCS}%.c $(HEADER)
 clean :
 	@$(RM) $(OBJS)
 	@${RM} ${P_OBJS}
-	@printf "$(YELLOW)$(BOLD)All libft object files removed$(RST)\n"
-	@printf "$(YELLOW)$(BOLD)libft object folder removed$(RST)\n"
+	@printf "$(YELLOW)$(BOLD)All libft object files removed$(RESET)\n"
+	@printf "$(YELLOW)$(BOLD)libft object folder removed$(RESET)\n"
 
 fclean :	
 	@${MAKE} clean
 	@${RM} ${NAME}
-	@printf "$(RED)$(BOLD)Library $(NAME) removed $(RST)\n"
+	@printf "$(RED)$(BOLD)Library $(NAME) removed $(RESET)\n"
 
 re :		
 	@${MAKE} fclean

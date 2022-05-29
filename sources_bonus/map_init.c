@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:54:23 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/23 16:12:13 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:27 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 int	get_map_w_nl(t_data *data)
 {

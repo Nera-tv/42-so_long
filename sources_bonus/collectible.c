@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:51:06 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 12:41:19 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:16 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	get_collectible(t_data *data)
 {

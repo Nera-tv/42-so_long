@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:14:51 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/16 11:36:25 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:24:54 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	put_portal_block_on_map(t_data *data)
 {

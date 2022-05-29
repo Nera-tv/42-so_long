@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 16:52:35 by dvilard           #+#    #+#             */
-/*   Updated: 2022/02/22 17:28:09 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:01 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	p_movement_trace_header(t_data *data)
 {

@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:49:55 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 11:14:37 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:18 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	ft_destroy_images_more(t_data *data, void **img, int nbr_of_images)
 {

@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:17:11 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 12:10:17 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:42 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 int	map_to_index(char asset)
 {

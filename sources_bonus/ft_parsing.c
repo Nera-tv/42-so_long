@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:52:05 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 12:56:30 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 18:50:26 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 int	push_file_into_tab(char *src, char **str)
 {
@@ -38,7 +38,6 @@ int	push_file_into_tab(char *src, char **str)
 	close(fd);
 	return (0);
 }
-
 
 int	ft_check_map_char_bis(int i, char *str)
 {

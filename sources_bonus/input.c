@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 16:39:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 14:57:41 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:03 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	input_mov_mob(int key, t_data *data)
 {

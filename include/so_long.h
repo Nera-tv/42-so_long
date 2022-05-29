@@ -6,15 +6,15 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:02 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 12:50:54 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:36 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx/mlx.h"
-# include "libft/libft.h"
+# include "../mlx/mlx.h"
+# include "../libft/libft.h"
 
 # define ERRUSAGE "so_long: no map to parse !\
 	\nUsage : ./so_long maps/<map>.ber\n"

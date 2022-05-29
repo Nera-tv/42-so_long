@@ -6,12 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:52:05 by dvilard           #+#    #+#             */
-/*   Updated: 2022/05/25 12:42:17 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:41:32 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-#include <stdio.h>
+#include "../include/so_long.h"
 
 int	push_file_into_tab(char *src, char **str)
 {

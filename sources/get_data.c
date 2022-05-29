@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:35:03 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/21 16:48:36 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:17 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	get_player_pos(t_data *data)
 {

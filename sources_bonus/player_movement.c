@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 14:30:36 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/01 12:40:59 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:11 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 int	check_char_player_map(t_data *data, int lr, int ud)
 {

@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:46:13 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:17:46 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:03 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 int	echap(t_data *data)
 {

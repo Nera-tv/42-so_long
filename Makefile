@@ -14,26 +14,29 @@ P_OBJS		:=	.objects/
 P_OBJS_B	:=	.objects_bonus/
 P_TRA		:=	trace/
 
-HEADER				=	so_long.h
-HEADER_B			=	so_long_bonus.h			\
-						${P_INC}error_msg.h		\
-						${P_INC}key.h			\
-						${P_INC}struct.h		\
-						${P_LFT}libft.h
+HEADER				=	${P_INC}so_long.h							\
+						${P_LFT}libft.h								\
+						${P_MLX}mlx.h
+HEADER_B			=	${P_INC}so_long_bonus.h						\
+						${P_INC}error_msg.h							\
+						${P_INC}key.h								\
+						${P_INC}struct.h							\
+						${P_LFT}libft.h								\
+						${P_MLX}mlx.h
 
 # Sources
-LST_SRCS			=	destroy_game.c			\
-						echap.c					\
-						ft_check_images.c		\
-						ft_parsing_bis.c		\
-						ft_parsing.c			\
-						get_data.c				\
-						input.c					\
-						load_images.c			\
-						map_gen.c				\
-						player_movement_bis.c	\
-						player_movement.c		\
-						so_long.c				\
+LST_SRCS			=	destroy_game.c								\
+						echap.c										\
+						ft_check_images.c							\
+						ft_parsing_bis.c							\
+						ft_parsing.c								\
+						get_data.c									\
+						input.c										\
+						load_images.c								\
+						map_gen.c									\
+						player_movement_bis.c						\
+						player_movement.c							\
+						so_long.c									\
 						win_init.c			
 
 
@@ -77,10 +80,13 @@ SRCS_B				=	$(addprefix ${P_SRCS_B},${LST_SRCS_B})
 OBJS_B				=	$(addprefix ${P_OBJS_B},${LST_OBJS_B})
 
 CC					=	gcc
-CFLAGS				=	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS				=	-Wall -Wextra -Werror
 RM					=	rm -rf
 LFTA				=	${P_LFT}libft.a
-LMLX				=	${P_MLX}libmlx.a
+LMLX				=	${P_MLX}libmlx.dylib
+USAGE		=	$(BLUE)$(BOLD)Usage : ./${NAME} maps/<map>.ber $(RESET)\n
+USAGE_B		=	$(BLUE)$(BOLD)Usage Bonus Part : ./${NAME} maps/<map>.ber $(RESET)\n
+
 
 #///////////////////////////////////////////////////////////////////////////////
 
@@ -112,32 +118,10 @@ LBLU 		=	\033[0;96m
 GRN 		=	\033[0;32m
 RED 		=	\033[0;31m
 GRY 		=	\033[0;90m
-RST 		=	\033[0m
 
 #///////////////////////////////////////////////////////////////////////////////
 
-all : print_header makelft makelmx norm bonus print_bottom
-
-
-
-
-
-
-
-
-
-
-
-print_header:
-	@echo "${GRY}====================================================${RST}\n"
-	@echo " ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄    ▄▄▄     ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄▄ "
-	@echo "█       █       █  █   █   █       █  █  █ █       █"
-	@echo "█  ▄▄▄▄▄█   ▄   █  █   █   █   ▄   █   █▄█ █   ▄▄▄▄█"
-	@echo "█ █▄▄▄▄▄█  █ █  █  █   █   █  █ █  █       █  █  ▄▄ "
-	@echo "█▄▄▄▄▄  █  █▄█  █  █   █▄▄▄█  █▄█  █  ▄    █  █ █  █"
-	@echo " ▄▄▄▄▄█ █       █  █       █       █ █ █   █  █▄▄█ █"
-	@echo "█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█"
-	@echo "\n${GRY}====================================================${RST}\n"
+all : print_header makelft makelmx norm bonus usage print_bottom
 
 # Rules
 
@@ -182,8 +166,23 @@ $(P_OBJS_B):
 	@mkdir -p $(P_OBJS_B)
 	@printf "$(GREEN)$(BOLD)${NAME_B} objects directories created$(RESET)	✅\n\n"
 
+print_header:
+	@echo "${GRY}====================================================${RESET}\n"
+	@echo " ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄    ▄▄▄     ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄▄ "
+	@echo "█       █       █  █   █   █       █  █  █ █       █"
+	@echo "█  ▄▄▄▄▄█   ▄   █  █   █   █   ▄   █   █▄█ █   ▄▄▄▄█"
+	@echo "█ █▄▄▄▄▄█  █ █  █  █   █   █  █ █  █       █  █  ▄▄ "
+	@echo "█▄▄▄▄▄  █  █▄█  █  █   █▄▄▄█  █▄█  █  ▄    █  █ █  █"
+	@echo " ▄▄▄▄▄█ █       █  █       █       █ █ █   █  █▄▄█ █"
+	@echo "█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄▄█"
+	@echo "\n${GRY}====================================================${RESET}\n"
+
+usage:
+	@printf "$(USAGE)"
+	@printf "$(USAGE_B)"
+
 print_bottom:
-	@echo "\n${GRY}=================================================${RST}\n"
+	@echo "\n${GRY}=================================================${RESET}\n"
 	@echo " ▄   ▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄    ▄ "
 	@echo "█ █ █   █       █   █   █  █ █  █       █  █  █ █"
 	@echo "█ █▄█   █▄▄▄▄   █   █   █  █▄█  █   ▄   █   █▄█ █"
@@ -191,7 +190,7 @@ print_bottom:
 	@echo "█▄▄▄    █ ▄▄▄▄▄▄█   █▄▄▄█▄     ▄█  █▄█  █  ▄    █"
 	@echo "    █   █ █▄▄▄▄▄█       █ █   █ █       █ █ █   █"
 	@echo "    █▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄█  █▄▄█"
-	@echo "\n${GRY}==================>${RST} By ${LMGT}dvilard${RST} ${GRY}<=================${RST}\n"
+	@echo "\n${GRY}==================>${RESET} By ${LMGT}dvilard${RESET} ${GRY}<=================${RESET}\n"
 
 $(LFTA): makelft
 
@@ -201,7 +200,7 @@ makelft:
 $(LMLX): makelmx
 
 makelmx:
-	@make -C ./mlx
+	@${MAKE} -C ./mlx
 	@cp mlx/libmlx.dylib .
 
 # Clean Rules
@@ -212,8 +211,10 @@ clean :
 	@printf "$(YELLOW)$(BOLD)${NAME} object folders removed$(RESET)\n"
 	@${RM} ${OBJS_B}
 	@${RM} ${P_OBJS_B}
+	@${RM} ${P_TRA}
 	@printf "$(YELLOW)$(BOLD)All ${NAME_B} object files removed$(RESET)\n"
 	@printf "$(YELLOW)$(BOLD)${NAME_B} object folders removed$(RESET)\n"
+	@printf "$(YELLOW)$(BOLD)Trace files removed$(RESET)\n"
 
 fclean :	
 	@${MAKE}	clean

@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:48:10 by dvilard           #+#    #+#             */
-/*   Updated: 2022/04/06 13:13:05 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:29:31 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 void	ft_load_block_images(t_data *data)
 {

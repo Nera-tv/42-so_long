@@ -6,11 +6,11 @@
 /*   By: dvilard <dvilard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:24:39 by dvilard           #+#    #+#             */
-/*   Updated: 2022/03/22 11:39:20 by dvilard          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:25:21 by dvilard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long_bonus.h"
+#include "../include/so_long_bonus.h"
 
 int	check_char_map(t_data *data, int lr, int ud)
 {
